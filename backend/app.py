@@ -10,17 +10,17 @@ import yt_dlp
 
 # ─── App setup ────────────────────────────────────────────────
 app = Flask(__name__)
-FRONTEND_URL = os.getenv(
-    "FRONTEND_URL",
-    "https://project-fmyux.vercel.app"
+FRONTEND_URL = "https://project-fmyux.vercel.app"
+
+CORS(
+    app,
+    origins=[
+        FRONTEND_URL,
+        "http://localhost:3000",
+        "http://localhost:5173"
+    ],
+    supports_credentials=True
 )
-# Allow requests from Vercel frontend + localhost dev
-ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-    "http://localhost:5173",
-    os.environ.get("FRONTEND_URL", ""),   # set this on Railway
-]
-CORS(app, origins=[o for o in ALLOWED_ORIGINS if o], supports_credentials=True)
 
 PORT         = int(os.environ.get("PORT", 5000))
 DOWNLOAD_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "downloads")
