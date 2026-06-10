@@ -10,7 +10,10 @@ import yt_dlp
 
 # ─── App setup ────────────────────────────────────────────────
 app = Flask(__name__)
-FRONTEND_URL = https://project-fmyux.vercel.app/
+FRONTEND_URL = os.getenv(
+    "FRONTEND_URL",
+    "https://project-fmyux.vercel.app"
+)
 # Allow requests from Vercel frontend + localhost dev
 ALLOWED_ORIGINS = [
     "http://localhost:3000",
