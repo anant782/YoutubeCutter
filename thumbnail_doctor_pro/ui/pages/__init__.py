@@ -294,7 +294,7 @@ class ThumbnailCoachPage(BasePage):
             output.append(f"   {color}")
         
         font_analysis = results.get('font_analysis', {})
-        output.append(f"\n📝 TEXT DETECTED: {font_analysis.get('text_count', 0')} elements")
+        output.append(f"\n📝 TEXT DETECTED: {font_analysis.get('text_count', 0)} elements")
         
         recommendations = results.get('recommendations', [])
         if recommendations:
