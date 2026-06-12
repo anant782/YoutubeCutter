@@ -5,13 +5,13 @@ Professional dark-themed desktop application UI
 from PySide6.QtWidgets import (
     QMainWindow, QWidget, QVBoxLayout, QHBoxLayout, QSplitter,
     QStackedWidget, QPushButton, QLabel, QFrame, QScrollArea,
-    QToolBar, QStatusBar, QMenu, QMenuBar, QAction, QSystemTrayIcon,
+    QToolBar, QStatusBar, QMenu, QMenuBar, QSystemTrayIcon,
     QMessageBox, QFileDialog, QDialog, QListWidget, QListWidgetItem,
     QTreeWidget, QTreeWidgetItem, QTextEdit, QProgressBar, QGroupBox,
     QComboBox, QLineEdit, QCheckBox, QSpinBox, QTabWidget, QSizePolicy
 )
 from PySide6.QtCore import Qt, QSize, Signal, Slot, QTimer, QThread
-from PySide6.QtGui import QIcon, QPixmap, QFont, QColor, QPalette, QActionGroup
+from PySide6.QtGui import QIcon, QPixmap, QFont, QColor, QPalette, QAction, QActionGroup
 from typing import Optional, Dict, Any
 import os
 
