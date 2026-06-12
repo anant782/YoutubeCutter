@@ -11,8 +11,19 @@ from ui.main_window import MainWindow
 from utils.logger import setup_logger
 
 def main():
+    # Enable High DPI scaling before creating QApplication
+    if hasattr(Qt, 'AA_EnableHighDpiScaling'):
+        QApplication.setAttribute(Qt.AA_EnableHighDpiScaling)
+    if hasattr(Qt, 'AA_UseHighDpiPixmaps'):
+        QApplication.setAttribute(Qt.AA_UseHighDpiPixmaps)
+    
     app = QApplication(sys.argv)
     app.setStyle(QStyleFactory.create("Fusion"))
+    
+    # Set application metadata
+    app.setApplicationName("Thumbnail Doctor Pro Ultimate")
+    app.setOrganizationName("ThumbnailDoctor")
+    app.setApplicationVersion("1.0.0")
     
     setup_logger()
     
